@@ -1,0 +1,105 @@
+.form {
+	width: 448px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.form__title {
+	margin-bottom: 12px;
+	@include font(20px, 700, $main-text-color, 0.03em, 1.15);
+	text-align: center;
+}
+.form__label {
+	margin-bottom: 4px;
+	height: 14px;
+	@include font(12px, 400, $second-text-color, 0.01em, 1.17);
+}
+.form__field {
+	position: relative;
+	@include flex(flex, column, unset, unset);
+	margin-bottom: 10px;
+}
+.form__input {
+	margin: 0;
+	height: 40px;
+	padding: 11px 12px;
+	padding-left: 42px;
+	@include font(12px, 400, $second-text-color, 0.01em, 1.17);
+	@include bordered(1px, solid, rgba(33, 33, 33, 0.2), 4px);
+	outline: none;
+	@include trans(border-color, rgba(33, 33, 33, 0.2));
+	&:focus {
+		@include trans(border-color, $lightblue-color);
+	}
+}
+.form__user-icon {
+	position: absolute;
+	top: 50%;
+	left: 12px;
+	width: 18px;
+	height: 18px;
+	@include trans(fill, $main-text-color);
+	.form__input:focus-within + & {
+		@include trans(fill, $lightblue-color);
+	}
+}
+
+.form__field.comment {
+	margin-bottom: 20px;
+}
+.form__field textarea {
+	padding: 12px 16px;
+	height: 120px;
+	@include font(14px, 400, $main-text-color, 0.01em, 1.14);
+	@include bordered(1px, solid, rgba(33, 33, 33, 0.2), 4px);
+	outline: none;
+	@include trans(border-color, rgba(33, 33, 33, 0.2));
+	&:focus-within {
+		@include trans(border-color, $lightblue-color);
+	}
+	&::placeholder {
+		@include font(14px, 400, rgba(117, 117, 117, 0.5), 0.01em, 1.14);
+	}
+}
+
+.form__field.policy {
+	@include flex();
+	margin-bottom: 30px;
+	height: 24px;
+}
+.policy__icon {
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	@include bordered(2px, solid, $black-color, 2px);
+	@include trans(background-image, none);
+	@include trans(border-color, $black-color);
+	@include trans(background-color, unset);
+	.policy__checkbox:checked + & {
+		background-size: contain;
+		background-origin: border-box;
+		@include trans(background-image, url(../images/icons/check.svg));
+		@include trans(border-color, $lightblue-color);
+		@include trans(background-color, $lightblue-color);
+	}
+}
+.policy__label {
+	margin-left: 7px;
+	@include font(14px, 400, $second-text-color, 0.03em, 1.71);
+}
+.policy__link {
+	position: relative;
+	&::before {
+		content: " ";
+		position: absolute;
+		bottom: 1.5px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $lightblue-color;
+	}
+}
+.form__button {
+	@extend .button;
+	margin-left: auto;
+	margin-right: auto;
+}

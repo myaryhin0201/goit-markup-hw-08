@@ -1,0 +1,16 @@
+.section {
+	padding-top: 94px;
+	padding-bottom: 94px;
+	&--features {
+		padding-bottom: 0;
+	}
+	&--team {
+		background-color: $lightgray-color;
+		padding-top: 94px;
+	}
+}
+.section__title {
+	margin-bottom: 50px;
+	@include font(36px, 700, inherit, 0.03em, 1.17);
+	text-align: center;
+}

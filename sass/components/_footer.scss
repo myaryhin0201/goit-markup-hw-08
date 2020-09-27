@@ -1,0 +1,91 @@
+.footer {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: $back-color;
+}
+.footer__flexbox {
+	@include flex($ai: baseline);
+}
+.footer__logo {
+	@extend .logo;
+	display: block;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	padding-bottom: 0;
+	padding-top: 0;
+	color: $white-color;
+}
+.footer__firstpos {
+	min-width: 231px;
+	margin-right: 70px;
+	& .contacts {
+		display: block;
+	}
+}
+.footer__firstpos .contacts__address {
+	display: inline-block;
+	@include font(14px, 400, $white-color, 0.03em, 1.71);
+	font-style: inherit;
+}
+.footer__firstpos .contacts__item {
+	margin-right: 0;
+	margin-left: 0;
+	&:not(:last-child) {
+		margin-bottom: 9px;
+	}
+}
+.footer__secondpos {
+	@include flex();
+	margin-right: 93px;
+}
+.footer__title {
+	@include font(14px, 700, $white-color, 0.03em, 1.14);
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+.footer__form {
+	@include flex();
+}
+.footer .form__field {
+	margin-bottom: 0;
+}
+.footer .form__input {
+	display: block;
+	outline: none;
+	margin: 0;
+	margin-right: 12px;
+	width: 358px;
+	height: 50px;
+	background-color: transparent;
+	padding: 15px 16px;
+	@include font(16px, 400, $white-color, 0.03em, 1.25);
+	@include bordered(1px, solid, rgba(255, 255, 255, 0.3), 4px);
+	@include trans(border-color, rgba(255, 255, 255, 0.3));
+	&::placeholder {
+		@include font(16px, 400, rgba(255, 255, 255, 0.6), 0.03em, 1.25);
+	}
+	&:focus {
+		@include trans(border-color, $white-color);
+	}
+}
+.footer__button {
+	@extend .button;
+	@include flex(inline-flex);
+	min-width: 200px;
+	padding: 10px 29px;
+	@include trans(background-color, $lightblue-color);
+	@include trans(color, $white-color);
+	&:hover,
+	&:focus {
+		@include trans(background-color, $white-color);
+		@include trans(color, $lightblue-color);
+	}
+}
+.footer_icon {
+	margin-left: 10px;
+	@include trans(fill, $white-color);
+	.footer__button:hover &,
+	.footer__button:focus & {
+		@include trans(fill, $lightblue-color);
+	}
+}

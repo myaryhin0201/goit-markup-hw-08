@@ -1,0 +1,25 @@
+body {
+	font-family: "Roboto", sans-serif;
+	@include font(14px, 400, $main-text-color, 0.02em, 1.14);
+	background-color: $white-color;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+textarea {
+	resize: none;
+}
+.link {
+	display: block;
+	padding-bottom: 32px;
+	padding-top: 32px;
+	color: $main-text-color;
+}
+.border {
+	border-top: 1px solid #ececec;
+}
+.current {
+	color: $lightblue-color;
+}
