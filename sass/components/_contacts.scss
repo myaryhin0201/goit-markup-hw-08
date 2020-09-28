@@ -1,24 +1,25 @@
-.contacts {
-	@include flex();
-	margin-left: auto;
-}
-.contacts__item:not(:last-child) {
-	margin-right: 50px;
-}
-.contacts__link {
-	@include flex($justcont: start);
-	@include font(14px, 500, $second-text-color, 0.02em, 1.14);
-	@include trans(color, $second-text-color);
-	&:hover,
-	&:focus {
-		@include trans(color, $lightblue-color);
-	}
-}
-.contacts__icon {
-	margin-right: 10px;
-	@include trans(fill, $second-text-color);
-	.contacts__link:hover &,
-	.contacts__link:focus & {
-		@include trans(fill, $lightblue-color);
-	}
-}
+// desktop
+// .contacts {
+// 	@include flex();
+// 	margin-left: auto;
+// }
+// .contacts__item:not(:last-child) {
+// 	margin-right: 50px;
+// }
+// .contacts__link {
+// 	@include flex($justcont: start);
+// 	@include font(14px, 500, $second-text-color, 0.02em, 1.14);
+// 	@include trans(color, $second-text-color);
+// 	&:hover,
+// 	&:focus {
+// 		@include trans(color, $lightblue-color);
+// 	}
+// }
+// .contacts__icon {
+// 	margin-right: 10px;
+// 	@include trans(fill, $second-text-color);
+// 	.contacts__link:hover &,
+// 	.contacts__link:focus & {
+// 		@include trans(fill, $lightblue-color);
+// 	}
+// }
