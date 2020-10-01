@@ -1,3 +1,35 @@
+.section {
+	padding: 60px 0;
+
+	&--features {
+		@include for-size(desktop) {
+			padding-bottom: 0;
+		}
+	}
+	&--team {
+		background-color: $lightgray-color;
+		// padding-top: 94px;
+	}
+	&--work {
+		display: none;
+		@include for-size(desktop) {
+			display: block;
+		}
+	}
+	@include for-size(desktop) {
+		padding-top: 94px 0;
+	}
+}
+.section__title {
+	margin-bottom: 30px;
+	@include font(28px, 700, inherit, 0.03em, 1.18);
+	text-align: center;
+	@include for-size(desktop) {
+		margin-bottom: 50px;
+		@include font(36px, 700, inherit, 0.03em, 1.17);
+	}
+}
+
 // desktop
 // .section {
 // 	padding-top: 94px;

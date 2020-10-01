@@ -7,7 +7,7 @@
 		url(../images/hero.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center;
+	// background-position: center;
 	text-align: center;
 	margin: 0 auto;
 	@include for-size(desktop) {
@@ -15,11 +15,16 @@
 	}
 }
 .hero__title {
-	display: inline-block;
+	margin: 0 auto;
 	margin-bottom: 30px;
-	max-width: 360px;
 	@include font(26px, 900, $white-color, 0.06em, 1.62);
 	text-transform: uppercase;
+	@include for-size(mobile) {
+		max-width: 360px;
+	}
+	@include for-size(tablet) {
+		max-width: 360px;
+	}
 	@include for-size(desktop) {
 		max-width: 696px;
 		font-size: 44px;
