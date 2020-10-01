@@ -72,7 +72,6 @@
 	display: block;
 	outline: none;
 	margin-bottom: 20px;
-
 	width: 100%;
 	height: 50px;
 	background-color: transparent;
@@ -94,7 +93,6 @@
 .footer__button {
 	@extend .button;
 	@include flex(inline-flex);
-	// margin: 0 auto;
 	min-width: 200px;
 	padding: 10px 29px;
 	@include trans(background-color, $lightblue-color);

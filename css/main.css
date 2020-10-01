@@ -52,7 +52,6 @@ Use a better box model (opinionated).
 *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  outline: 2px solid red;
 }
 
 html,
