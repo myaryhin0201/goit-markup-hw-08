@@ -11,8 +11,20 @@
 		<header class="header">
 			<div class="container header__flexbox">
 				<a href="./index.html" class="logo"><span class="current">Web</span>Studio</a>
-
-				<div class="nav-wrap">
+				<button type="button" class="header__button" data-menu-button>
+					<svg
+						class="header__menu-icons"
+						width="40px"
+						height="40px"
+						aria-label="Переключатель меню"
+						aria-controls="nav-wrap"
+						aria-expanded="false"
+					>
+						<use class="header__icon-cross" href="./images/icons/sprite.svg#icon-cross"></use>
+						<use class="header__icon-menu" href="./images/icons/sprite.svg#icon-menu"></use>
+					</svg>
+				</button>
+				<div class="nav-wrap" data-menu>
 					<nav class="nav">
 						<ul class="nav__list">
 							<li class="nav__item">
@@ -33,7 +45,7 @@
 								info@devstudio.com
 							</a>
 						</li>
-						<li class="contacts-item">
+						<li class="contacts__item">
 							<a href="tel:+380961111111" class="contacts__link">
 								<svg class="contacts__icon" width="10px" height="16px">
 									<use href="./images/icons/sprite.svg#icon-phone"></use>
@@ -98,7 +110,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/technokriak@x1.jpg"
 											alt="Проект Технокряк"
-											width="370"
+											width="450"
 										/>
 									</picture>
 									<div class="gallery__overlay">
@@ -144,7 +156,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/goldenstar@x1.jpg"
 											alt="Проект золотая звезда"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 									<div class="gallery__overlay">
@@ -190,7 +202,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/seafood@x1.jpg"
 											alt="Проект Еда моря"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 
@@ -237,7 +249,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/prime@x1.jpg"
 											alt="Проект простое число"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 
@@ -284,7 +296,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/boxes@x1.jpg"
 											alt="Проект коробки"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 
@@ -331,7 +343,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/bordersinspiration@x1.jpg"
 											alt="Проект пограничное вдохновение"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 
@@ -378,7 +390,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/limitededition@x1.jpg"
 											alt="Проект ограниченный выпуск"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 									<div class="gallery__overlay">
@@ -424,7 +436,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/lab@x1.jpg"
 											alt="Проект Лаб"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 
@@ -471,7 +483,7 @@
 											class="gallery__image"
 											src="./images/desktop/portfolio/growingbusiness@x1.jpg"
 											alt="Проект растущий бизнес"
-											width="370px"
+											width="450px"
 										/>
 									</picture>
 
@@ -596,6 +608,7 @@
 				</div>
 			</div>
 		</footer>
+		<script src="./js/menu.js"></script>
 		<script src="./js/filter.js"></script>
 	</body>
 </html>

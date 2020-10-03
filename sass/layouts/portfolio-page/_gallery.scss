@@ -36,9 +36,6 @@
 }
 .gallery__image {
 	width: 100%;
-	@include for-size(desktop) {
-		width: 370px;
-	}
 }
 .show {
 	display: block;

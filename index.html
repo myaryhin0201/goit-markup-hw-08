@@ -11,15 +11,27 @@
 		<header class="header">
 			<div class="container header__flexbox">
 				<a href="./index.html" class="logo"><span class="current">Web</span>Studio</a>
-
-				<div class="nav-wrap">
+				<button type="button" class="header__button" data-menu-button>
+					<svg
+						class="header__menu-icons"
+						width="40px"
+						height="40px"
+						aria-label="Переключатель меню"
+						aria-controls="nav-wrap"
+						aria-expanded="false"
+					>
+						<use class="header__icon-cross" href="./images/icons/sprite.svg#icon-cross"></use>
+						<use class="header__icon-menu" href="./images/icons/sprite.svg#icon-menu"></use>
+					</svg>
+				</button>
+				<div class="nav-wrap" data-menu>
 					<nav class="nav">
 						<ul class="nav__list">
 							<li class="nav__item">
 								<a href="./index.html" class="nav__link link current">Студия</a>
 							</li>
 							<li class="nav__item">
-								<a href="./features.html" class="nav__link link">Портфолио</a>
+								<a href="./portfolio.html" class="nav__link link">Портфолио</a>
 							</li>
 							<li class="nav__item"><a href="#" class="nav__link link">Контакты</a></li>
 						</ul>
@@ -33,7 +45,7 @@
 								info@devstudio.com
 							</a>
 						</li>
-						<li class="contacts-item">
+						<li class="contacts__item">
 							<a href="tel:+380961111111" class="contacts__link">
 								<svg class="contacts__icon" width="10px" height="16px">
 									<use href="./images/icons/sprite.svg#icon-phone"></use>
@@ -199,7 +211,7 @@
 									class="team__photo"
 									src="./images/desktop/team/productdesigner@x1.jpg"
 									alt="Мужчина в очках и боробой"
-									width="270"
+									width="450"
 								/>
 							</picture>
 							<h3 class="team__title">Игорь Демьяненко</h3>
@@ -286,7 +298,7 @@
 									class="team__photo"
 									src="./images/desktop/team/frontend@x1.jpg"
 									alt="Женщина в очках улыбается"
-									width="270"
+									width="450"
 								/>
 							</picture>
 							<h3 class="team__title">Ольга Репина</h3>
@@ -373,7 +385,7 @@
 									class="team__photo"
 									src="./images/desktop/team/marketing@x1.jpg"
 									alt="Мужчина в голубой рубашке"
-									width="270"
+									width="450"
 								/>
 							</picture>
 							<h3 class="team__title">Николай Тарасов</h3>
@@ -460,7 +472,7 @@
 									class="team__photo"
 									src="./images/desktop/team/uidesigner@x1.jpg"
 									alt="Мужчина в черной футболке улыбается"
-									width="270"
+									width="450"
 								/>
 							</picture>
 							<h3 class="team__title">Михаил Ермаков</h3>
@@ -677,7 +689,7 @@
 			</div>
 		</footer>
 		<!-- modal window  -->
-		<div class="backdrop is-hidden container" data-modal>
+		<div class="backdrop is-hidden" data-modal>
 			<div class="modal">
 				<button class="modal__button-close" data-modal-close>
 					<svg class="modal__icon" width="11px" height="11px">
@@ -736,6 +748,7 @@
 				</form>
 			</div>
 		</div>
+		<script src="./js/menu.js"></script>
 		<script src="./js/modal-form.js"></script>
 		<script src="./js/modal.js"></script>
 	</body>

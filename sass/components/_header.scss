@@ -2,12 +2,31 @@
 	background-color: $white-color;
 }
 .header__flexbox {
+	position: relative;
+	@include flex($justcont: space-between);
 	@include for-size(tablet) {
 		@include flex($justcont: start);
 	}
-	// @include for-size(desktop) {
-	// 	@include flex($justcont: start);
-	// }
+}
+.header__button {
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	@media screen and (min-width: 768px) {
+		display: none;
+	}
+}
+
+.header__button .header__icon-cross {
+	display: none;
+}
+.header__button.is-open .header__icon-cross {
+	display: block;
+}
+.header__button.is-open .header__icon-menu {
+	display: none;
 }
 .header .logo {
 	@include for-size(tablet) {
@@ -18,26 +37,56 @@
 	}
 }
 .nav-wrap {
-	display: none;
+	@media screen and (max-width: 767px) {
+		display: none;
+		position: absolute;
+		top: 101%;
+		left: 0;
+		width: 100%;
+		padding-top: 60px;
+		padding-bottom: 64px;
+		background-color: $white-color;
+		z-index: 1;
+		&.is-open {
+			display: block;
+		}
+	}
 	@include for-size(tablet) {
-		display: contents;
+		@include flex($justcont: space-between);
+		flex-grow: 1;
 	}
 }
 .nav {
-	@include flex();
+	@include for-size(tablet) {
+		@include flex();
+	}
 }
 .nav__list {
-	@include flex();
+	@include for-size(tablet) {
+		@include flex();
+	}
 }
-.nav__item:not(:last-child) {
-	margin-right: 50px;
+.nav__item {
+	text-align: center;
+	@media screen and(max-width:767px) {
+		margin-bottom: 52px;
+	}
+	@include for-size(tablet) {
+		&:not(:last-child) {
+			margin-right: 50px;
+		}
+	}
 }
 .nav__link {
-	@include font(14px, 500, $main-text-color, 0.02em, 1.14);
-	@include trans(color, $main-text-color);
-	&:hover,
-	&:focus {
-		@include trans(color, $lightblue-color);
+	display: inline-block;
+	@include font(18px, 500, $main-text-color, 0.02em, 1.14);
+	@include for-size(tablet) {
+		font-size: 14px;
+		@include trans(color, $main-text-color);
+		&:hover,
+		&:focus {
+			@include trans(color, $lightblue-color);
+		}
 	}
 }
 .nav__link.current {
@@ -45,11 +94,14 @@
 	&:before {
 		content: " ";
 		position: absolute;
-		bottom: -1.2px;
+		bottom: -10px;
 		left: 0;
 		width: 100%;
 		height: 4px;
 		background-color: $lightblue-color;
 		border-radius: 2px;
+		@include for-size(tablet) {
+			bottom: -1.2px;
+		}
 	}
 }

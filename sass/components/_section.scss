@@ -12,9 +12,8 @@
 		background-color: $lightgray-color;
 	}
 	&--work {
-		display: none;
-		@include for-size(desktop) {
-			display: block;
+		@media screen and (max-width: 1199px) {
+			display: none;
 		}
 	}
 }
