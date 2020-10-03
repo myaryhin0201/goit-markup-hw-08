@@ -25,6 +25,7 @@
 .footer__firstpos {
 	& .contacts {
 		display: block;
+		font-size: 14px;
 	}
 	@include for-size(tablet-only) {
 		margin-right: 165px;
@@ -39,10 +40,11 @@
 	font-style: inherit;
 }
 .footer__firstpos .contacts__item {
-	margin-right: 0;
-	margin-left: 0;
-
+	margin: 0;
 	&:not(:last-child) {
+		@include for-size(mobile) {
+			margin-bottom: 8px;
+		}
 		margin-bottom: 9px;
 	}
 }
@@ -53,7 +55,7 @@
 	}
 }
 .footer__secondpos {
-	@media screen and (min-width: 1px) and (max-width: 767px) {
+	@include for-size(mobile-tablet) {
 		margin-top: 60px;
 	}
 	@include for-size(desktop) {
@@ -72,7 +74,6 @@
 		text-align: left;
 	}
 }
-
 .footer__form {
 	@include for-size(desktop) {
 		@include flex($justcont: start);
@@ -80,7 +81,7 @@
 	}
 }
 .footer__thirdpos {
-	@media screen and (min-width: 1px) and (max-width: 1199px) {
+	@include for-size(todesktop) {
 		margin-top: 60px;
 	}
 	@include for-size(tablet-only) {

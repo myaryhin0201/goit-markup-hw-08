@@ -5,6 +5,9 @@ body {
 	&.modal-open {
 		overflow: hidden;
 	}
+	@include for-size(mobile-tablet) {
+		padding-top: 60px;
+	}
 }
 img {
 	display: block;
@@ -17,7 +20,7 @@ textarea {
 .link {
 	display: block;
 	color: $main-text-color;
-	@media screen and (min-width: 768px) {
+	@include for-size(tablet) {
 		padding: 32px 0;
 	}
 }

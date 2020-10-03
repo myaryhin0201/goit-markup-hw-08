@@ -16,7 +16,7 @@
 .team__text {
 	margin-bottom: 16px;
 	text-align: center;
-	@include font(16px, 400, $second-text-color, inherit, inherit);
+	@include font(16px, 400, $second-text-color, inherit, 1.19);
 }
 .team__item {
 	margin-bottom: 30px;

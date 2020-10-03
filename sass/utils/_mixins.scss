@@ -32,12 +32,20 @@
 		@media screen and (min-width: $mobile) {
 			@content;
 		}
+	} @else if $range == mobile-tablet {
+		@media screen and (max-width: #{$tablet - 1}) {
+			@content;
+		}
 	} @else if $range == tablet {
 		@media screen and (min-width: $tablet) {
 			@content;
 		}
 	} @else if $range == tablet-only {
 		@media screen and (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+			@content;
+		}
+	} @else if $range == todesktop {
+		@media screen and (max-width: #{$desktop - 1}) {
 			@content;
 		}
 	} @else if $range == desktop {

@@ -1,8 +1,14 @@
 .header {
+	@include for-size(mobile-tablet) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
 	background-color: $white-color;
 }
 .header__flexbox {
-	position: relative;
 	@include flex($justcont: space-between);
 	@include for-size(tablet) {
 		@include flex($justcont: start);
@@ -14,19 +20,29 @@
 	padding: 0;
 	border: 0;
 	background-color: transparent;
-	@media screen and (min-width: 768px) {
+	@include for-size(tablet) {
 		display: none;
 	}
+	& .header__icon-cross {
+		@include trans(opacity, 0);
+	}
+	& .header__icon-menu {
+		@include trans(opacity, 1);
+	}
+	&.is-open .header__icon-cross {
+		@include trans(opacity, 1);
+	}
+	&.is-open .header__icon-menu {
+		@include trans(opacity, 0);
+	}
 }
-
-.header__button .header__icon-cross {
-	display: none;
-}
-.header__button.is-open .header__icon-cross {
-	display: block;
-}
-.header__button.is-open .header__icon-menu {
-	display: none;
+.header__icon-cross,
+.header__icon-menu {
+	@include trans(fill, $main-text-color);
+	.header__button:hover &,
+	.header__button:focus & {
+		@include trans(fill, $lightblue-color);
+	}
 }
 .header .logo {
 	@include for-size(tablet) {
@@ -37,18 +53,24 @@
 	}
 }
 .nav-wrap {
-	@media screen and (max-width: 767px) {
-		display: none;
+	@include for-size(mobile-tablet) {
 		position: absolute;
-		top: 101%;
+		top: 102%;
 		left: 0;
 		width: 100%;
 		padding-top: 60px;
 		padding-bottom: 64px;
 		background-color: $white-color;
-		z-index: 1;
+		z-index: 2;
+		pointer-events: none;
+		@include trans(opacity, 0);
+		@include trans(visibility, hidden);
+		@include trans(transform, translateY(-100%));
 		&.is-open {
-			display: block;
+			pointer-events: initial;
+			@include trans(opacity, 1);
+			@include trans(visibility, visible);
+			@include trans(transform, translateY(0));
 		}
 	}
 	@include for-size(tablet) {
@@ -68,7 +90,7 @@
 }
 .nav__item {
 	text-align: center;
-	@media screen and(max-width:767px) {
+	@include for-size(mobile-tablet) {
 		margin-bottom: 52px;
 	}
 	@include for-size(tablet) {

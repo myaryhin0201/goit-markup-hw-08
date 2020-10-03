@@ -2,7 +2,6 @@
 	@include for-size(tablet) {
 		@include flex();
 	}
-
 	@include for-size(tablet-only) {
 		flex-direction: column;
 		align-items: start;
@@ -10,7 +9,7 @@
 }
 .contacts__item {
 	&:not(:last-child) {
-		@media screen and(max-width:767px) {
+		@include for-size(mobile-tablet) {
 			margin-bottom: 12px;
 		}
 		@include for-size(tablet-only) {
@@ -23,7 +22,7 @@
 }
 .contacts__link {
 	@include flex();
-	@include font(18px, 500, $second-text-color, 0.02em, 1.14);
+	@include font(18px, 500, $second-text-color, 0.02em, 1.17);
 	@include trans(color, $second-text-color);
 	&:hover,
 	&:focus {
@@ -31,7 +30,7 @@
 	}
 	@include for-size(tablet) {
 		justify-content: start;
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.nav-wrap & {
 		@include for-size(desktop) {

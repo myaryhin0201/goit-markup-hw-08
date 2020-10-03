@@ -52,7 +52,6 @@ Use a better box model (opinionated).
 *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  outline: 2px solid red;
 }
 
 html,
@@ -422,6 +421,12 @@ body.modal-open {
   overflow: hidden;
 }
 
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -528,9 +533,6 @@ textarea {
   .section__title {
     margin-bottom: 50px;
     font-size: 36px;
-    font-weight: 700;
-    color: inherit;
-    letter-spacing: 0.03em;
     line-height: 1.17;
   }
 }
@@ -682,8 +684,17 @@ textarea {
   background-color: #ffffff;
 }
 
+@media screen and (max-width: 767px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
 .header__flexbox {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -734,15 +745,44 @@ textarea {
 }
 
 .header__button .header__icon-cross {
-  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__button .header__icon-menu {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header__button.is-open .header__icon-cross {
-  display: block;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header__button.is-open .header__icon-menu {
-  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__icon-cross,
+.header__icon-menu {
+  fill: #212121;
+  -webkit-transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__button:hover .header__icon-cross,
+.header__button:focus .header__icon-cross, .header__button:hover
+.header__icon-menu,
+.header__button:focus
+.header__icon-menu {
+  fill: #2196f3;
+  -webkit-transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media screen and (min-width: 768px) {
@@ -759,18 +799,42 @@ textarea {
 
 @media screen and (max-width: 767px) {
   .nav-wrap {
-    display: none;
     position: absolute;
-    top: 101%;
+    top: 102%;
     left: 0;
     width: 100%;
     padding-top: 60px;
     padding-bottom: 64px;
     background-color: #ffffff;
-    z-index: 1;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    -webkit-transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .nav-wrap.is-open {
-    display: block;
+    pointer-events: initial;
+    opacity: 1;
+    -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: visible;
+    -webkit-transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -957,7 +1021,7 @@ textarea {
   font-weight: 500;
   color: #757575;
   letter-spacing: 0.02em;
-  line-height: 1.14;
+  line-height: 1.17;
   color: #757575;
   -webkit-transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -974,7 +1038,7 @@ textarea {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -1304,7 +1368,7 @@ textarea {
   font-weight: 400;
   color: #757575;
   letter-spacing: inherit;
-  line-height: inherit;
+  line-height: 1.19;
 }
 
 .team__item {
@@ -1373,7 +1437,7 @@ textarea {
   margin-right: 30px;
 }
 
-@media screen and (min-width: 1px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .clients__item {
     width: calc((100% - 30px) / 2);
   }
@@ -1483,6 +1547,8 @@ textarea {
 .filter__button {
   padding: 6px 22px;
   margin-bottom: 15px;
+  font-weight: 500;
+  line-height: 1.625;
   background-color: #f5f4fa;
   -webkit-transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1773,6 +1839,7 @@ textarea {
 
 .footer__firstpos .contacts {
   display: block;
+  font-size: 14px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -1798,12 +1865,17 @@ textarea {
 }
 
 .footer__firstpos .contacts__item {
-  margin-right: 0;
-  margin-left: 0;
+  margin: 0;
 }
 
 .footer__firstpos .contacts__item:not(:last-child) {
   margin-bottom: 9px;
+}
+
+@media screen and (min-width: 480px) {
+  .footer__firstpos .contacts__item:not(:last-child) {
+    margin-bottom: 8px;
+  }
 }
 
 .footer__firstpos .contacts__link {
@@ -1820,7 +1892,7 @@ textarea {
   }
 }
 
-@media screen and (min-width: 1px) and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .footer__secondpos {
     margin-top: 60px;
   }
@@ -1886,7 +1958,7 @@ textarea {
   }
 }
 
-@media screen and (min-width: 1px) and (max-width: 1199px) {
+@media screen and (max-width: 1199px) {
   .footer__thirdpos {
     margin-top: 60px;
   }
@@ -2254,12 +2326,13 @@ textarea {
 }
 
 .backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
   pointer-events: none;
   opacity: 0;
   -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  -webkit-transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop {
@@ -2270,6 +2343,9 @@ textarea {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   overflow-y: scroll;
+  visibility: visible;
+  -webkit-transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
   -webkit-transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);

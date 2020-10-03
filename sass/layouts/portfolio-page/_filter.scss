@@ -12,6 +12,8 @@
 	@extend .button;
 	padding: 6px 22px;
 	margin-bottom: 15px;
+	font-weight: 500;
+	line-height: 1.625;
 	@include trans(background-color, $lightgray-color);
 	@include trans(color, $main-text-color);
 	@include trans(box-shadow, none);

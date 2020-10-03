@@ -12,7 +12,7 @@
 		background-color: $lightgray-color;
 	}
 	&--work {
-		@media screen and (max-width: 1199px) {
+		@include for-size(todesktop) {
 			display: none;
 		}
 	}
@@ -23,6 +23,7 @@
 	text-align: center;
 	@include for-size(desktop) {
 		margin-bottom: 50px;
-		@include font(36px, 700, inherit, 0.03em, 1.17);
+		font-size: 36px;
+		line-height: 1.17;
 	}
 }
