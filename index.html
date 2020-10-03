@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Wed Studio - мы делаем исскуство!" />
 		<title>WebStudio</title>
 		<link rel="stylesheet" href="./css/main.min.css" />
 	</head>
@@ -61,7 +62,7 @@
 		<!--Главное-->
 		<main class="border">
 			<!-- Герой -->
-			<section class="hero">
+			<section class="hero webp no-webp">
 				<div class="container">
 					<h1 class="hero__title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</h1>
 					<button type="button" class="hero__button button" data-modal-open>Заказать услугу</button>
@@ -107,13 +108,19 @@
 						<li class="work__item">
 							<picture>
 								<source
+									type="image/webp"
+									srcset="
+										./images/desktop/features/box1@x1.webp 1x,
+										./images/desktop/features/box1@x2.webp 2x
+									"
+									media="(min-width:1200px)"
+								/>
+								<img
 									srcset="
 										./images/desktop/features/box1@x1.jpg 1x,
 										./images/desktop/features/box1@x2.jpg 2x
 									"
 									media="(min-width:1200px)"
-								/>
-								<img
 									src="./images/desktop/features/box1@x1.jpg"
 									alt="Человек сидит за ноутбуком"
 									width="370px"
@@ -126,13 +133,19 @@
 						<li class="work__item">
 							<picture>
 								<source
+									type="image/webp"
+									srcset="
+										./images/desktop/features/box2@x1.webp 1x,
+										./images/desktop/features/box2@x2.webp 2x
+									"
+									media="(min-width:1200px)"
+								/>
+								<img
 									srcset="
 										./images/desktop/features/box2@x1.jpg 1x,
 										./images/desktop/features/box2@x2.jpg 2x
 									"
 									media="(min-width:1200px)"
-								/>
-								<img
 									src="./images/desktop/features/box2@x1.jpg"
 									alt="Презентация приложения три версии"
 									width="370px"
@@ -145,13 +158,18 @@
 						<li class="work__item">
 							<picture>
 								<source
+									type="image/webp"
 									srcset="
-										./images/desktop/features/box3@x1.jpg 1x,
-										./images/desktop/features/box3@x2.jpg 2x
+										./images/desktop/features/box3@x1.webp 1x,
+										./images/desktop/features/box3@x2.webp 2x
 									"
 									media="(min-width:1200px)"
 								/>
 								<img
+									srcset="
+										./images/desktop/features/box3@x1.jpg 1x,
+										./images/desktop/features/box3@x2.jpg 2x
+									"
 									src="./images/desktop/features/box3@x1.jpg"
 									alt="Диаграмма РГБ показаны сотами"
 									width="370px"
@@ -171,6 +189,30 @@
 					<ul class="team__list">
 						<li class="team__item">
 							<picture>
+								<source
+									type="image/webp"
+									srcset="
+										./images/desktop/team/productdesigner@x1.webp 1x,
+										./images/desktop/team/productdesigner@x2.webp 2x
+									"
+									media="(min-width:1200px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/tablet/team/productdesigner@x1.webp 1x,
+										./images/tablet/team/productdesigner@x2.webp 2x
+									"
+									media="(min-width:768px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/mobile/team/productdesigner@x1.webp 1x,
+										./images/mobile/team/productdesigner@x2.webp 2x
+									"
+									media="(max-width:767px)"
+								/>
 								<source
 									srcset="
 										./images/desktop/team/productdesigner@x1.jpg 1x,
@@ -259,6 +301,30 @@
 						<li class="team__item">
 							<picture>
 								<source
+									type="image/webp"
+									srcset="
+										./images/desktop/team/frontend@x1.webp 1x,
+										./images/desktop/team/frontend@x2.webp 2x
+									"
+									media="(min-width:1200px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/tablet/team/frontend@x1.webp 1x,
+										./images/tablet/team/frontend@x2.webp 2x
+									"
+									media="(min-width:768px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/mobile/team/frontend@x1.webp 1x,
+										./images/mobile/team/frontend@x2.webp 2x
+									"
+									media="(max-width:767px)"
+								/>
+								<source
 									srcset="
 										./images/desktop/team/frontend@x1.jpg 1x,
 										./images/desktop/team/frontend@x2.jpg 2x
@@ -346,6 +412,30 @@
 						<li class="team__item">
 							<picture>
 								<source
+									type="image/webp"
+									srcset="
+										./images/desktop/team/marketing@x1.webp 1x,
+										./images/desktop/team/marketing@x2.webp 2x
+									"
+									media="(min-width:1200px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/tablet/team/marketing@x1.webp 1x,
+										./images/tablet/team/marketing@x2.webp 2x
+									"
+									media="(min-width:768px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/mobile/team/marketing@x1.webp 1x,
+										./images/mobile/team/marketing@x2.webp 2x
+									"
+									media="(max-width:767px)"
+								/>
+								<source
 									srcset="
 										./images/desktop/team/marketing@x1.jpg 1x,
 										./images/desktop/team/marketing@x2.jpg 2x
@@ -432,6 +522,30 @@
 						</li>
 						<li class="team__item">
 							<picture>
+								<source
+									type="image/webp"
+									srcset="
+										./images/desktop/team/uidesigner@x1.webp 1x,
+										./images/desktop/team/uidesigner@x2.webp 2x
+									"
+									media="(min-width:1200px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/tablet/team/uidesigner@x1.webp 1x,
+										./images/tablet/team/uidesigner@x2.webp 2x
+									"
+									media="(min-width:768px)"
+								/>
+								<source
+									type="image/webp"
+									srcset="
+										./images/mobile/team/uidesigner@x1.webp 1x,
+										./images/mobile/team/uidesigner@x2.webp 2x
+									"
+									media="(max-width:767px)"
+								/>
 								<source
 									srcset="
 										./images/desktop/team/uidesigner@x1.jpg 1x,
