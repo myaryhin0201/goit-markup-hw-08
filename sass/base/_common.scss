@@ -11,13 +11,11 @@ img {
 textarea {
 	resize: none;
 }
-// desktop
-// .link {
-// 	display: block;
-// 	padding-bottom: 32px;
-// 	padding-top: 32px;
-// 	color: $main-text-color;
-// }
+.link {
+	display: block;
+	padding: 32px 0;
+	color: $main-text-color;
+}
 .border {
 	border-top: 1px solid #ececec;
 }

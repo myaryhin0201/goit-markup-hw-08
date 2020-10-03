@@ -1,24 +1,27 @@
-// .features__list {
-// 	@include flex();
-// }
+.features__list {
+	@include for-size(tablet) {
+		@include flex();
+	}
+	@include for-size(tablet-only) {
+		align-items: start;
+		flex-wrap: wrap;
+	}
+}
 .features__title {
 	margin-bottom: 10px;
-	text-align: center;
 	@include font(14px, 700, $main-text-color, 0.03em, 1.14);
 	text-transform: uppercase;
+	text-align: center;
+	@include for-size(tablet) {
+		text-align: left;
+	}
 }
 .features__text {
 	@include font(14px, 400, $second-text-color, 0.03em, 1.71);
 }
 .features__item {
-	// min-width: calc((100% - 30px * 3) / 4);
-	// margin-right: 30px;
+	width: 100%;
 	margin-bottom: 30px;
-	letter-spacing: 0.03em;
-	&:last-child {
-		// margin-right: 0;
-		margin-bottom: 0px;
-	}
 	&::before {
 		display: block;
 		content: "";
@@ -29,15 +32,31 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		border-radius: 4px;
-		@include for-size(desktop) {
-			width: 270px;
-		}
 	}
 	$icons: "satteline", "clock", "diagram", "tech";
 	@each $iconName in $icons {
 		$index: index($icons, $iconName);
 		&:nth-child(#{$index})::before {
 			background-image: url(../images/icons/#{$iconName}.svg);
+		}
+	}
+	@include for-size(tablet) {
+		max-width: calc((100% - 30px * 1) / 2);
+		margin-right: 30px;
+	}
+	@include for-size(tablet-only) {
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+		&:nth-last-child(-n + 2) {
+			margin-bottom: 0;
+		}
+	}
+	@include for-size(desktop) {
+		min-width: calc((100% - 30px * 3) / 4);
+		margin-bottom: 0;
+		&:last-child {
+			margin-right: 0;
 		}
 	}
 }

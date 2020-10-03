@@ -1,10 +1,19 @@
-// desktop
 .contacts {
 	@include flex();
+	@include for-size(tablet-only) {
+		flex-direction: column;
+		align-items: start;
+	}
+
 	margin-left: auto;
 }
 .contacts__item:not(:last-child) {
-	margin-right: 50px;
+	@include for-size(tablet-only) {
+		margin-bottom: 10px;
+	}
+	@include for-size(desktop) {
+		margin-right: 50px;
+	}
 }
 .contacts__link {
 	@include flex($justcont: start);
@@ -13,6 +22,11 @@
 	&:hover,
 	&:focus {
 		@include trans(color, $lightblue-color);
+	}
+	.nav-wrap & {
+		@include for-size(desktop) {
+			padding: 32px 0;
+		}
 	}
 }
 .contacts__icon {

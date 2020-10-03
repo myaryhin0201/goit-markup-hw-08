@@ -2,12 +2,26 @@
 	background-color: $white-color;
 }
 .header__flexbox {
+	@include for-size(tablet) {
+		@include flex($justcont: start);
+	}
+	// @include for-size(desktop) {
+	// 	@include flex($justcont: start);
+	// }
+}
+.header .logo {
+	@include for-size(tablet) {
+		margin-right: 88px;
+	}
 	@include for-size(desktop) {
-		@include flex();
+		margin-right: 93px;
 	}
 }
 .nav-wrap {
 	display: none;
+	@include for-size(tablet) {
+		display: contents;
+	}
 }
 .nav {
 	@include flex();

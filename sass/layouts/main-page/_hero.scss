@@ -7,7 +7,7 @@
 		url(../images/hero.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	// background-position: center;
+	background-position: center;
 	text-align: center;
 	margin: 0 auto;
 	@include for-size(desktop) {
@@ -22,9 +22,7 @@
 	@include for-size(mobile) {
 		max-width: 360px;
 	}
-	@include for-size(tablet) {
-		max-width: 360px;
-	}
+
 	@include for-size(desktop) {
 		max-width: 696px;
 		font-size: 44px;

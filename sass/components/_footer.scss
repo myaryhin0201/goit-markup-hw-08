@@ -5,21 +5,29 @@
 	text-align: center;
 }
 .footer__flexbox {
-	@include for-size(desktop) {
+	@include for-size(tablet) {
 		@include flex($ai: baseline);
+	}
+	@include for-size(tablet-only) {
+		flex-wrap: wrap;
 	}
 }
 .footer__logo {
 	@extend .logo;
 	margin-bottom: 20px;
-	padding-bottom: 0;
-	padding-top: 0;
+	padding: 0;
 	color: $white-color;
+	@include for-size(desktop) {
+		display: block;
+		text-align: left;
+	}
 }
 .footer__firstpos {
-	margin-bottom: 60px;
 	& .contacts {
 		display: block;
+	}
+	@include for-size(tablet-only) {
+		margin-right: 165px;
 	}
 	@include for-size(desktop) {
 		min-width: 231px;
@@ -45,7 +53,9 @@
 	}
 }
 .footer__secondpos {
-	margin-bottom: 60px;
+	@media screen and (min-width: 1px) and (max-width: 767px) {
+		margin-top: 60px;
+	}
 	@include for-size(desktop) {
 		@include flex();
 		margin-right: 93px;
@@ -58,10 +68,23 @@
 	@include font(14px, 700, $white-color, 0.03em, 1.14);
 	margin-bottom: 20px;
 	text-transform: uppercase;
+	@include for-size(desktop) {
+		text-align: left;
+	}
 }
+
 .footer__form {
 	@include for-size(desktop) {
-		@include flex();
+		@include flex($justcont: start);
+		align-items: start;
+	}
+}
+.footer__thirdpos {
+	@media screen and (min-width: 1px) and (max-width: 1199px) {
+		margin-top: 60px;
+	}
+	@include for-size(tablet-only) {
+		min-width: 450px;
 	}
 }
 .footer .form__field {
@@ -88,6 +111,7 @@
 	@include for-size(desktop) {
 		margin-right: 12px;
 		width: 358px;
+		margin-bottom: 0;
 	}
 }
 .footer__button {

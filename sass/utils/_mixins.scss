@@ -36,6 +36,10 @@
 		@media screen and (min-width: $tablet) {
 			@content;
 		}
+	} @else if $range == tablet-only {
+		@media screen and (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+			@content;
+		}
 	} @else if $range == desktop {
 		@media screen and (min-width: $desktop) {
 			@content;
