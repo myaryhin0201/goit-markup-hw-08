@@ -73,7 +73,7 @@
 }
 .policy__icon {
 	display: inline-block;
-	width: 16px;
+	min-width: 16px;
 	height: 15px;
 	@include bordered(2px, solid, $black-color, 2px);
 	@include trans(background-image, none);

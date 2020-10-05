@@ -52,6 +52,9 @@
 	@include bordered(1px, solid, rgba(0, 0, 0, 0.1), 50%);
 	@include trans(background-color, $white-color);
 }
+.modal__icon {
+	display: inline-block;
+}
 .modal__button-close:hover .modal__icon,
 .modal__button-close:focus .modal__icon {
 	@include trans(fill, $lightblue-color);
