@@ -12,5 +12,6 @@
 	}
 	@include for-size(desktop) {
 		width: calc(1200px - 18px);
+		// width: calc(1200px);
 	}
 }

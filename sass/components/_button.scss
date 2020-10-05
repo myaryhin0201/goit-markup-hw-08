@@ -1,8 +1,7 @@
 .button {
-	display: block;
+	// display: block;
 	text-align: center;
 	padding: 10px 32px;
-	margin: 0 auto;
 	font-family: inherit;
 	@include font(16px, 700, $white-color, 0.06em, 1.86);
 	cursor: pointer;
