@@ -38,6 +38,9 @@
 .footer__firstpos .contacts__address {
 	@include font(14px, 400, $white-color, 0.03em, 1.71);
 	font-style: inherit;
+	@include for-size(desktop) {
+		text-align: left;
+	}
 }
 .footer__firstpos .contacts__item {
 	margin: 0;

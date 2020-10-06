@@ -1895,6 +1895,12 @@ textarea {
   font-style: inherit;
 }
 
+@media screen and (min-width: 1200px) {
+  .footer__firstpos .contacts__address {
+    text-align: left;
+  }
+}
+
 .footer__firstpos .contacts__item {
   margin: 0;
 }
